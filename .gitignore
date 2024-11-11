@@ -1,0 +1,13 @@
+#IDE configurations
+.vscode/
+.idea/
+
+#Env vars
+.env
+
+#Build files
+build/
+backend/target
+frontend/build
+
+
