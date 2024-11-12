@@ -1,4 +1,4 @@
-package com.example.ER_to_SQL;
+package com.example.myGame;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;

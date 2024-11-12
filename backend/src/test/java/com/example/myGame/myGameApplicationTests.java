@@ -1,10 +1,10 @@
-package com.example.ER_to_SQL;
+package com.example.myGame;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class ErToSqlApplicationTests {
+class myGameApplicationTests {
 
 	@Test
 	void contextLoads() {

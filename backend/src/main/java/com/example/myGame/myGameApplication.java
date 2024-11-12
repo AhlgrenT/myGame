@@ -1,13 +1,13 @@
-package com.example.ER_to_SQL;
+package com.example.myGame;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class ErToSqlApplication {
+public class myGameApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(ErToSqlApplication.class, args);
+		SpringApplication.run(myGameApplication.class, args);
 	}
 
 }
