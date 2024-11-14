@@ -1,26 +1,39 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { useState } from 'react';
 import './App.css';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    const [responseMessage, setResponseMessage] = useState<string>("");
+
+    // Function to handle button click
+    const handleButtonClick = async () => {
+        try {
+            const response = await fetch("http://localhost:8080/hello", {
+                method: "GET",
+                headers: {
+                    "Content-Type": "application/json"
+                }
+            });
+
+            if (response.ok) {
+                const message = await response.text();
+                setResponseMessage(message); // Set the response message to display it
+            } else {
+                setResponseMessage("Error: Could not reach backend.");
+            }
+        } catch (error) {
+            console.error("Error connecting to backend:", error);
+            setResponseMessage("Error: Unable to connect to backend.");
+        }
+    };
+
+    return (
+        <div className="App">
+            <h1>Test Backend Connection</h1>
+            <button onClick={handleButtonClick}>Trigger Backend</button>
+            {responseMessage && <p>Response from backend: {responseMessage}</p>}
+        </div>
+    );
 }
 
 export default App;
+
