@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './App.css';
+import MovableCircle from './MovableCircle';
 
 function App() {
     const [responseMessage, setResponseMessage] = useState<string>("");
@@ -29,6 +30,7 @@ function App() {
     return (
         <div className="App">
             <h1>Test Backend Connection</h1>
+            <MovableCircle />
             <button onClick={handleButtonClick}>Trigger Backend</button>
             {responseMessage && <p>Response from backend: {responseMessage}</p>}
         </div>
